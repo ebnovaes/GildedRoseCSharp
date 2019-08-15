@@ -16,6 +16,7 @@ namespace csharp
             for (var i = 0; i < Items.Count; i++)
             {
                 var brieItemHandler = new BrieItemHandler();
+                var backstagePassesItemHandler = new BackstagePassesItemHandler();
 
                 if (brieItemHandler.IsAbleToHandle(Items[i]))
                 {
@@ -23,40 +24,17 @@ namespace csharp
                     continue;
                 }
 
-                if (Items[i].Name != BackstagePasses)
+                if (backstagePassesItemHandler.IsAbleToHandle(Items[i]))
                 {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != Sulfuras)
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
+                    backstagePassesItemHandler.Handle(Items[i]);
+                    continue;
                 }
-                else
+
+                if (Items[i].Quality > 0)
                 {
-                    if (Items[i].Quality < 50)
+                    if (Items[i].Name != Sulfuras)
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
-
-                        if (Items[i].Name == BackstagePasses)
-                        {
-                            if (Items[i].SellIn < 11)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-
-                            if (Items[i].SellIn < 6)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-                        }
+                        Items[i].Quality = Items[i].Quality - 1;
                     }
                 }
 
@@ -67,28 +45,11 @@ namespace csharp
 
                 if (Items[i].SellIn < 0)
                 {
-                    if (Items[i].Name != AgedBrie)
+                    if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Name != BackstagePasses)
+                        if (Items[i].Name != Sulfuras)
                         {
-                            if (Items[i].Quality > 0)
-                            {
-                                if (Items[i].Name != Sulfuras)
-                                {
-                                    Items[i].Quality = Items[i].Quality - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                        }
-                    }
-                    else
-                    {
-                        if (Items[i].Quality < 50)
-                        {
-                            Items[i].Quality = Items[i].Quality + 1;
+                            Items[i].Quality = Items[i].Quality - 1;
                         }
                     }
                 }
