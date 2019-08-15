@@ -63,6 +63,10 @@
   <ItemGroup>
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="GildedRose.cs" />
+    <Compile Include="Tests\ItemBackstagePassesRulesTest.cs" />
+    <Compile Include="Tests\OrdinaryItemRulesTest.cs" />
+    <Compile Include="Tests\ItemSulfurasRulesTest.cs" />
+    <Compile Include="Tests\ItemBrieRulesTest.cs" />
     <Compile Include="Tests\GildedRoseTest.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
