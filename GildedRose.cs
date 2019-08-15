@@ -15,6 +15,11 @@ namespace csharp
         {
             for (var i = 0; i < Items.Count; i++)
             {
+                if (Items[i].Name == Sulfuras)
+                {
+                    continue;
+                }
+
                 var brieItemHandler = new BrieItemHandler();
                 var backstagePassesItemHandler = new BackstagePassesItemHandler();
 
@@ -32,25 +37,16 @@ namespace csharp
 
                 if (Items[i].Quality > 0)
                 {
-                    if (Items[i].Name != Sulfuras)
-                    {
-                        Items[i].Quality = Items[i].Quality - 1;
-                    }
+                    Items[i].Quality = Items[i].Quality - 1;
                 }
 
-                if (Items[i].Name != Sulfuras)
-                {
-                    Items[i].SellIn = Items[i].SellIn - 1;
-                }
+                Items[i].SellIn = Items[i].SellIn - 1;
 
                 if (Items[i].SellIn < 0)
                 {
                     if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Name != Sulfuras)
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
+                        Items[i].Quality = Items[i].Quality - 1;
                     }
                 }
             }
