@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using static csharp.KeyItemConstantsClass;
 
 namespace csharp.Tests
 {
@@ -10,7 +11,7 @@ namespace csharp.Tests
         public void GivenItemBrie_WhenNextDayComes_QualityLessThan50_SellInHigherThan0_ThenQualityShouldIncreaseByOne()
         {
             // Arrange
-            var item = new Item() { Name = "Aged Brie", Quality = 49, SellIn = 1 };
+            var item = new Item() { Name = AgedBrie, Quality = 49, SellIn = 1 };
             
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -24,7 +25,7 @@ namespace csharp.Tests
         public void GivenItemBrie_WhenNextDayComes_QualityEquals50_SellInHigherThan0_ThenQualityShouldRemain50()
         {
             // Arrange
-            var item = new Item() { Name = "Aged Brie", Quality = 50, SellIn = 1 };
+            var item = new Item() { Name = AgedBrie, Quality = 50, SellIn = 1 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -38,7 +39,7 @@ namespace csharp.Tests
         public void GivenItemBrie_WhenNextDayComes_QualityLessThan50_SellInEquals0_ThenQualityShouldIncreaseByTwo()
         {
             // Arrange
-            var item = new Item() { Name = "Aged Brie", Quality = 10, SellIn = 0 };
+            var item = new Item() { Name = AgedBrie, Quality = 10, SellIn = 0 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -52,7 +53,7 @@ namespace csharp.Tests
         public void GivenItemBrie_WhenNextDayComes_QualityLessThan50_SellInLessThan0_ThenQualityShouldIncreaseByTwo()
         {
             // Arrange
-            var item = new Item() { Name = "Aged Brie", Quality = 22, SellIn = -3 };
+            var item = new Item() { Name = AgedBrie, Quality = 22, SellIn = -3 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });

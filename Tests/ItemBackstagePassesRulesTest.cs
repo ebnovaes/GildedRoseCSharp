@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using static csharp.KeyItemConstantsClass;
 
 namespace csharp.Tests
 {
@@ -10,7 +11,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_QualityLessThan50_SellInHigherThan0_ThenQualityShouldIncreaseByOne()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 49, SellIn = 1 };
+            var item = new Item() { Name = BackstagePasses, Quality = 49, SellIn = 1 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -24,7 +25,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInEquals10_ThenQualityShouldIncreaseByTwo()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 28, SellIn = 10 };
+            var item = new Item() { Name = BackstagePasses, Quality = 28, SellIn = 10 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -38,7 +39,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInLessThan10AndHigherThan5_ThenQualityShouldIncreaseByTwo()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 13, SellIn = 7 };
+            var item = new Item() { Name = BackstagePasses, Quality = 13, SellIn = 7 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -52,7 +53,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInEquals5_ThenQualityShouldIncreaseByThree()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 37, SellIn = 5 };
+            var item = new Item() { Name = BackstagePasses, Quality = 37, SellIn = 5 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -66,7 +67,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInLessThan5AndHigherThan0_ThenQualityShouldIncreaseByThree()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 22, SellIn = 2 };
+            var item = new Item() { Name = BackstagePasses, Quality = 22, SellIn = 2 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -80,7 +81,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInIs0_ThenQualityShouldBe0()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 10, SellIn = 0 };
+            var item = new Item() { Name = BackstagePasses, Quality = 10, SellIn = 0 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });
@@ -94,7 +95,7 @@ namespace csharp.Tests
         public void GivenItemBackstagePasses_WhenNextDayComes_SellInLessThan0_ThenQualityShouldBe0()
         {
             // Arrange
-            var item = new Item() { Name = "Backstage passes to a TAFKAL80ETC concert", Quality = 10, SellIn = -2 };
+            var item = new Item() { Name = BackstagePasses, Quality = 10, SellIn = -2 };
 
             // Act
             var actual = new GildedRose(new List<Item> { item });

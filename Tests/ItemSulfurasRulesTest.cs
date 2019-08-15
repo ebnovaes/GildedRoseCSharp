@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using static csharp.KeyItemConstantsClass;
 
 namespace csharp.Tests
 {
@@ -9,7 +10,7 @@ namespace csharp.Tests
         [Test]
         public void GivenItemSulfuras_WhenNextDayComes_SellInHigherThan0_ThenQualityAndSellInShouldKeepTheirValues()
         {
-            Item item = new Item() { Name = "Sulfuras, Hand of Ragnaros" };
+            Item item = new Item() { Name = Sulfuras };
             item.Quality = 80;
             item.SellIn = 1;
 
@@ -23,7 +24,7 @@ namespace csharp.Tests
         [Test]
         public void GivenItemBrie_WhenNextDayComes_SellInEquals0_ThenQualityAndSellInShouldKeepTheirValues()
         {
-            Item item = new Item() { Name = "Sulfuras, Hand of Ragnaros" };
+            Item item = new Item() { Name = Sulfuras };
             item.Quality = 80;
             item.SellIn = 0;
 
@@ -37,7 +38,7 @@ namespace csharp.Tests
         [Test]
         public void GivenItemBrie_WhenNextDayComes_SellInLessThan0_ThenQualityAndSellInShouldKeepTheirValues()
         {
-            Item item = new Item() { Name = "Sulfuras, Hand of Ragnaros" };
+            Item item = new Item() { Name = Sulfuras };
             item.Quality = 80;
             item.SellIn = -1;
 
