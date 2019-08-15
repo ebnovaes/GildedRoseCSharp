@@ -15,7 +15,15 @@ namespace csharp
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name != AgedBrie && Items[i].Name != BackstagePasses)
+                var brieItemHandler = new BrieItemHandler();
+
+                if (brieItemHandler.IsAbleToHandle(Items[i]))
+                {
+                    brieItemHandler.Handle(Items[i]);
+                    continue;
+                }
+
+                if (Items[i].Name != BackstagePasses)
                 {
                     if (Items[i].Quality > 0)
                     {

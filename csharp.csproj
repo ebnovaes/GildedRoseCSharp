@@ -61,10 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrieItemHandler.cs" />
     <Compile Include="KeyItemConstant.cs" />
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="Tests\ItemBackstagePassesRulesTest.cs" />
+    <Compile Include="Tests\ItemBrieHandlerTest.cs" />
     <Compile Include="Tests\OrdinaryItemRulesTest.cs" />
     <Compile Include="Tests\ItemSulfurasRulesTest.cs" />
     <Compile Include="Tests\ItemBrieRulesTest.cs" />
