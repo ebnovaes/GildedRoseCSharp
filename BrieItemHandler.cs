@@ -3,15 +3,15 @@ using static csharp.KeyItemConstantsClass;
 
 namespace csharp
 {
-    public class BrieItemHandler
+    public class BrieItemHandler : ItemHandlerTemplateMethod
     {
-        public void Handle(Item item)
+        public override bool IsAbleToHandle(Item item)
         {
-            if (item.Name != AgedBrie)
-            {
-                throw new InvalidOperationException($"Item cannot be handled here");
-            }
+            return item.Name == AgedBrie;
+        }
 
+        protected override void ActuallyHandleItem(Item item)
+        {
             if (item.SellIn > 0)
             {
                 item.Quality += 1;
@@ -25,13 +25,6 @@ namespace csharp
             {
                 item.Quality = 50;
             }
-
-            item.SellIn -= 1;
-        }
-
-        public bool IsAbleToHandle(Item item)
-        {
-            return item.Name == AgedBrie;
         }
     }
 }

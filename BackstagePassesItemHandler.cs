@@ -3,15 +3,15 @@ using static csharp.KeyItemConstantsClass;
 
 namespace csharp
 {
-    public class BackstagePassesItemHandler
+    public class BackstagePassesItemHandler : ItemHandlerTemplateMethod
     {
-        public void Handle(Item item)
+        public override bool IsAbleToHandle(Item item)
         {
-            if (item.Name != BackstagePasses)
-            {
-                throw new InvalidOperationException($"Item cannot be handled here");
-            }
+            return item.Name == BackstagePasses;
+        }
 
+        protected override void ActuallyHandleItem(Item item)
+        {
             if (item.SellIn >= 11)
             {
                 item.Quality += 1;
@@ -33,13 +33,6 @@ namespace csharp
             {
                 item.Quality = 50;
             }
-
-            item.SellIn -= 1;
-        }
-
-        public bool IsAbleToHandle(Item item)
-        {
-            return item.Name == BackstagePasses;
         }
     }
 }
