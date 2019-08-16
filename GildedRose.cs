@@ -22,7 +22,7 @@ namespace csharp
 
                 var brieItemHandler = new BrieItemHandler();
                 var backstagePassesItemHandler = new BackstagePassesItemHandler();
-
+                var ordinaryItemHandler = new OrdinaryItemHandler();
                 if (brieItemHandler.IsAbleToHandle(Items[i]))
                 {
                     brieItemHandler.Handle(Items[i]);
@@ -35,19 +35,10 @@ namespace csharp
                     continue;
                 }
 
-                if (Items[i].Quality > 0)
+                if (ordinaryItemHandler.IsAbleToHandle(Items[i]))
                 {
-                    Items[i].Quality = Items[i].Quality - 1;
-                }
-
-                Items[i].SellIn = Items[i].SellIn - 1;
-
-                if (Items[i].SellIn < 0)
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        Items[i].Quality = Items[i].Quality - 1;
-                    }
+                    ordinaryItemHandler.Handle(Items[i]);
+                    continue;
                 }
             }
         }
