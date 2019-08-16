@@ -14,7 +14,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "Ordinary Item", Quality = 10, SellIn = 1 };
 
             // Act
-            var actual = new OrdinaryItemHandler();
+            var actual = new OrdinaryItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -28,7 +28,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "Ordinary Item", Quality = 0, SellIn = 1 };
 
             // Act
-            var actual = new OrdinaryItemHandler();
+            var actual = new OrdinaryItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -42,7 +42,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "Ordinary Item", Quality = 35, SellIn = 0 };
 
             // Act
-            var actual = new OrdinaryItemHandler();
+            var actual = new OrdinaryItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -56,7 +56,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "Ordinary Item", Quality = 11, SellIn = -1 };
 
             // Act
-            var actual = new OrdinaryItemHandler();
+            var actual = new OrdinaryItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -70,7 +70,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "Ordinary Item", Quality = 1, SellIn = -1 };
 
             // Act
-            var actual = new OrdinaryItemHandler();
+            var actual = new OrdinaryItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -80,7 +80,7 @@ namespace csharp.Tests
         [Test]
         public void GivenOrdinaryItemHandler_WhenViolatingTheHandlingPermissionRule_ThenShouldThrowException()
         {
-            var ordinaryItemHandler = new OrdinaryItemHandler();
+            var ordinaryItemHandler = new OrdinaryItemHandler(null);
 
             var item = new Item() { Name = AgedBrie, Quality = 1, SellIn = 1 };
             Assert.Throws<InvalidOperationException>(() =>

@@ -3,8 +3,12 @@ using static csharp.KeyItemConstantsClass;
 
 namespace csharp
 {
-    public class BackstagePassesItemHandler : ItemHandlerTemplateMethod
+    public class BackstagePassesItemHandler : ItemHandler
     {
+        public BackstagePassesItemHandler(ItemHandler nextItemInChain) : base(nextItemInChain)
+        {
+        }
+
         public override bool IsAbleToHandle(Item item)
         {
             return item.Name == BackstagePasses;

@@ -2,8 +2,12 @@
 
 namespace csharp
 {
-    public class OrdinaryItemHandler : ItemHandlerTemplateMethod
+    public class OrdinaryItemHandler : ItemHandler
     {
+        public OrdinaryItemHandler(ItemHandler nextItemInChain) : base(nextItemInChain)
+        {
+        }
+
         public override bool IsAbleToHandle(Item item)
         {
             return item.Name != AgedBrie &&

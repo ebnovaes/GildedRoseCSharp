@@ -15,7 +15,7 @@ namespace csharp.Tests
             var item = new Item() { Name = AgedBrie, Quality = 49, SellIn = 1 };
             
             // Act
-            var actual = new BrieItemHandler();
+            var actual = new BrieItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -29,7 +29,7 @@ namespace csharp.Tests
             var item = new Item() { Name = AgedBrie, Quality = 50, SellIn = 1 };
 
             // Act
-            var actual = new BrieItemHandler();
+            var actual = new BrieItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -43,7 +43,7 @@ namespace csharp.Tests
             var item = new Item() { Name = AgedBrie, Quality = 10, SellIn = 0 };
 
             // Act
-            var actual = new BrieItemHandler();
+            var actual = new BrieItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -57,7 +57,7 @@ namespace csharp.Tests
             var item = new Item() { Name = AgedBrie, Quality = 22, SellIn = -3 };
 
             // Act
-            var actual = new BrieItemHandler();
+            var actual = new BrieItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -71,7 +71,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "AnotherArbitraryItem", Quality = 22, SellIn = -3 };
 
             // Act
-            var actual = new BrieItemHandler();
+            var actual = new BrieItemHandler(null);
 
             // Assert
             Assert.Throws<InvalidOperationException>(() => actual.Handle(item), "Item cannot be handled here");

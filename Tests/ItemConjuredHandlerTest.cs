@@ -14,7 +14,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 10, SellIn = 1 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -28,7 +28,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 1, SellIn = 1 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -42,7 +42,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 6, SellIn = 0 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -56,7 +56,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 8, SellIn = -1 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -70,7 +70,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 3, SellIn = 0 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -84,7 +84,7 @@ namespace csharp.Tests
             var item = new Item() { Name = Conjured, Quality = 3, SellIn = -1 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -98,7 +98,7 @@ namespace csharp.Tests
             var item = new Item() { Name = AgedBrie, Quality = 22, SellIn = -3 };
 
             // Act
-            var actual = new ConjuredItemHandler();
+            var actual = new ConjuredItemHandler(null);
 
             // Assert
             Assert.Throws<InvalidOperationException>(() => actual.Handle(item), "Item cannot be handled here");

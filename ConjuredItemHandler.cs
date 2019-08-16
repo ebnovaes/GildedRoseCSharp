@@ -2,8 +2,12 @@
 
 namespace csharp
 {
-    public class ConjuredItemHandler : ItemHandlerTemplateMethod
+    public class ConjuredItemHandler : ItemHandler
     {
+        public ConjuredItemHandler(ItemHandler nextItemInChain) : base(nextItemInChain)
+        {
+        }
+
         public override bool IsAbleToHandle(Item item)
         {
             return item.Name == Conjured;

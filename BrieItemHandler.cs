@@ -3,8 +3,12 @@ using static csharp.KeyItemConstantsClass;
 
 namespace csharp
 {
-    public class BrieItemHandler : ItemHandlerTemplateMethod
+    public class BrieItemHandler : ItemHandler
     {
+        public BrieItemHandler(ItemHandler nextItemInChain) : base(nextItemInChain)
+        {
+        }
+
         public override bool IsAbleToHandle(Item item)
         {
             return item.Name == AgedBrie;

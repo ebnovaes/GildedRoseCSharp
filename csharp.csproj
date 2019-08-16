@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="BackstagePassesItemHandler.cs" />
     <Compile Include="ConjuredItemHandler.cs" />
-    <Compile Include="ItemHandlerTemplateMethod.cs" />
+    <Compile Include="ItemHandler.cs" />
     <Compile Include="OrdinaryItemHandler.cs" />
     <Compile Include="BrieItemHandler.cs" />
     <Compile Include="KeyItemConstant.cs" />

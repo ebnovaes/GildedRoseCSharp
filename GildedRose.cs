@@ -13,6 +13,7 @@ namespace csharp
 
         public void UpdateQuality()
         {
+            var itemHandler = SetupItemHandlersChain();
             for (var i = 0; i < Items.Count; i++)
             {
                 if (Items[i].Name == Sulfuras)
@@ -20,34 +21,18 @@ namespace csharp
                     continue;
                 }
 
-                var brieItemHandler = new BrieItemHandler();
-                var backstagePassesItemHandler = new BackstagePassesItemHandler();
-                var ordinaryItemHandler = new OrdinaryItemHandler();
-                var conjuredItemHandler = new ConjuredItemHandler();
-                if (brieItemHandler.IsAbleToHandle(Items[i]))
-                {
-                    brieItemHandler.Handle(Items[i]);
-                    continue;
-                }
-
-                if (backstagePassesItemHandler.IsAbleToHandle(Items[i]))
-                {
-                    backstagePassesItemHandler.Handle(Items[i]);
-                    continue;
-                }
-
-                if (ordinaryItemHandler.IsAbleToHandle(Items[i]))
-                {
-                    ordinaryItemHandler.Handle(Items[i]);
-                    continue;
-                }
-
-                if (conjuredItemHandler.IsAbleToHandle(Items[i]))
-                {
-                    conjuredItemHandler.Handle(Items[i]);
-                    continue;
-                }
+                itemHandler.Handle(Items[i]);
             }
+        }
+
+        private ItemHandler SetupItemHandlersChain()
+        {
+            ItemHandler item = new BrieItemHandler(null);
+            item = new BackstagePassesItemHandler(item);
+            item = new ConjuredItemHandler(item);
+            item = new OrdinaryItemHandler(item);
+
+            return item;
         }
     }
 }

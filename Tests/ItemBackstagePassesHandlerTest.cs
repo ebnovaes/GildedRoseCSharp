@@ -14,7 +14,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 49, SellIn = 1 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -28,7 +28,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 28, SellIn = 10 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -42,7 +42,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 19, SellIn = 11 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -56,7 +56,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 13, SellIn = 7 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -70,7 +70,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 25, SellIn = 6 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -84,7 +84,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 37, SellIn = 5 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -98,7 +98,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 22, SellIn = 2 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -112,7 +112,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 10, SellIn = 0 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -126,7 +126,7 @@ namespace csharp.Tests
             var item = new Item() { Name = BackstagePasses, Quality = 10, SellIn = -2 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
             actual.Handle(item);
 
             // Assert
@@ -140,7 +140,7 @@ namespace csharp.Tests
             var item = new Item() { Name = "ArbitraryItemX", Quality = 36, SellIn = -3 };
 
             // Act
-            var actual = new BackstagePassesItemHandler();
+            var actual = new BackstagePassesItemHandler(null);
 
             // Assert
             Assert.Throws<InvalidOperationException>(() => actual.Handle(item), "Item cannot be handled here");
