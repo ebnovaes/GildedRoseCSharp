@@ -3,7 +3,7 @@ using static csharp.KeyItemConstantsClass;
 
 namespace csharp
 {
-    public class OrdinaryItemHandler
+    public class ConjuredItemHandler
     {
         public void Handle(Item item)
         {
@@ -14,11 +14,11 @@ namespace csharp
 
             if (item.SellIn > 0)
             {
-                item.Quality -= 1;
+                item.Quality -= 2;
             }
             else
             {
-                item.Quality -= 2;
+                item.Quality -= 4;
             }
 
             if (item.Quality < 0)
@@ -31,10 +31,7 @@ namespace csharp
 
         public bool IsAbleToHandle(Item item)
         {
-            return item.Name != AgedBrie &&
-                   item.Name != BackstagePasses &&
-                   item.Name != Sulfuras &&
-                   item.Name != Conjured;
+            return item.Name == Conjured;
         }
     }
 }

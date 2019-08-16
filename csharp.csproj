@@ -62,15 +62,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackstagePassesItemHandler.cs" />
+    <Compile Include="ConjuredItemHandler.cs" />
     <Compile Include="OrdinaryItemHandler.cs" />
     <Compile Include="BrieItemHandler.cs" />
     <Compile Include="KeyItemConstant.cs" />
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="GildedRose.cs" />
+    <Compile Include="Tests\ItemConjuredHandlerTest.cs" />
     <Compile Include="Tests\ItemOrdinaryHandlerTest.cs" />
     <Compile Include="Tests\ItemBackstagePassesRulesTest.cs" />
     <Compile Include="Tests\ItemBackstagePassesHandlerTest.cs" />
     <Compile Include="Tests\ItemBrieHandlerTest.cs" />
+    <Compile Include="Tests\ItemConjuredRulesTest.cs" />
     <Compile Include="Tests\OrdinaryItemRulesTest.cs" />
     <Compile Include="Tests\ItemSulfurasRulesTest.cs" />
     <Compile Include="Tests\ItemBrieRulesTest.cs" />

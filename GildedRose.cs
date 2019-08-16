@@ -23,6 +23,7 @@ namespace csharp
                 var brieItemHandler = new BrieItemHandler();
                 var backstagePassesItemHandler = new BackstagePassesItemHandler();
                 var ordinaryItemHandler = new OrdinaryItemHandler();
+                var conjuredItemHandler = new ConjuredItemHandler();
                 if (brieItemHandler.IsAbleToHandle(Items[i]))
                 {
                     brieItemHandler.Handle(Items[i]);
@@ -38,6 +39,12 @@ namespace csharp
                 if (ordinaryItemHandler.IsAbleToHandle(Items[i]))
                 {
                     ordinaryItemHandler.Handle(Items[i]);
+                    continue;
+                }
+
+                if (conjuredItemHandler.IsAbleToHandle(Items[i]))
+                {
+                    conjuredItemHandler.Handle(Items[i]);
                     continue;
                 }
             }
